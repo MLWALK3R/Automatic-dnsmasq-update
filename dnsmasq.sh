@@ -18,6 +18,7 @@ if [ "$TEST" != "/etc/dnsmasq.d" ]; then
 	echo -e "\e[0;31m dnsmasq is not installed or missing \e[0m"
 	exit 1
 	fi
+	else
 
 echo -e "\E[33;40m[*] Checking if dnsmasq is installed.\e[0m"
  if [ -f /etc/dnsmasq.conf ]; then
