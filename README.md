@@ -17,6 +17,6 @@ echo "conf-file=/etc/ads.dnsmasq.conf" >> /etc/dnsmasq.conf
 ```
 
 ```bash
-curl -s URL HERE | bash
+curl -o  dnsmasq.sh  https://github.com/MLWALK3R/Automatic-dnsmasq-update/blob/master/dnsmasq.sh && chmod +x dnsmasq.sh && ./dnsmasq.sh
 ```
 ========================
