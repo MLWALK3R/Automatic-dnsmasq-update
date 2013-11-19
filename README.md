@@ -7,7 +7,7 @@ Automatic-dnsmasq-update
 This script will auto update your list for pgl.yoyo.org.
 
 ========================
-Make sure you are running as root & have curl installed.
+Make sure you are running as root & have curl installed, this script will install a cron to run every monday.
 
 ========================
 
