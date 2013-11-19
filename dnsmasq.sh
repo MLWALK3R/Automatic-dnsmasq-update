@@ -1,7 +1,7 @@
 #!/bin/sh
 echo -e "\E[33;40m[*] Checking if you're running an Edgemax device.\e[0m"
 if [ -f /config/config.boot ]; then
-	echo -e "Edge router detected"
+	echo -e "\E[32;40m Edge router detected \e[0m"
 	echo -e "\E[33;40m[*] Checking if dnsmasq is installed.\e[0m"
     TEST=` find /etc/dnsmasq.d `
 if [ "$TEST" != "/etc/dnsmasq.d" ]; then
@@ -19,7 +19,7 @@ if [ "$TEST" != "/etc/dnsmasq.d" ]; then
 	exit 1
 	fi
 	else
-
+echo -e "\E[33;40m Edgemax not found \e[0m"
 echo -e "\E[33;40m[*] Checking if dnsmasq is installed.\e[0m"
  if [ -f /etc/dnsmasq.conf ]; then
 	echo -e "\E[32;40m dnsmasq is installed \e[0m"
