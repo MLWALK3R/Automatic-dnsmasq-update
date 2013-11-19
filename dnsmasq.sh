@@ -24,6 +24,7 @@ if [ -f /etc/dnsmasq.conf ];  then
 		/etc/init.d/dnsmasq restart
 		echo -e "\E[32;40m Done! \e[0m"
 		exit 1
+		fi
 else 
 	echo -e "\e[0;31m dnsmasq is not installed or missing \e[0m"
 	exit 1
