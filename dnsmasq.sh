@@ -9,7 +9,7 @@ if [ "$TEST" != "/etc/dnsmasq.d" ]; then
         sleep 1
 		echo -e "\E[32;40m[*] Updating your ad-block list [*]\e[0m"
 		sleep 2
-		curl -o  /etc/dnsmasq.d/ads.dnsmasq.conf  "http://pgl.yoyo.org/adservers/serverlist.php?hostformat=dnsmasq&showintro0&mimetype=plaintext"
+		curl -o -s /etc/dnsmasq.d/ads.dnsmasq.conf  "http://pgl.yoyo.org/adservers/serverlist.php?hostformat=dnsmasq&showintro0&mimetype=plaintext"
 		echo -e "reloading dnsmasq"
 		/etc/init.d/dnsmasq restart
 		echo -e "\E[32;40m Done! \e[0m"
