@@ -11,11 +11,13 @@ Make sure you are running as root & have curl installed, this script will instal
 
 ========================
 
-```bash
-curl -o  dnsmasq.sh  https://raw.github.com/MLWALK3R/Automatic-dnsmasq-update/master/dnsmasq.sh  | chmod +x dnsmasq.sh | ./dnsmasq.sh
-```
-
-without downloading
+without downloading # Prefered method.
 ```bash
 curl -s https://raw.github.com/MLWALK3R/Automatic-dnsmasq-update/master/dnsmasq.sh  | bash
+```
+
+Download * You will need to set permissions to run it. 
+
+```bash
+curl -o  dnsmasq.sh  https://raw.github.com/MLWALK3R/Automatic-dnsmasq-update/master/dnsmasq.sh
 ```
