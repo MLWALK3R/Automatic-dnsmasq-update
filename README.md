@@ -22,7 +22,10 @@ curl -o  dnsmasq.sh  https://raw.github.com/MLWALK3R/Automatic-dnsmasq-update/ma
 ========================
 
 ```bash
-nano /etc/cron.d/bindupdate
+mv dnsmasq.sh /etc/
+```
+```bash
+nano /etc/cron.d/dnsmasq.sh
 ```
 
 This will run it every monday every week until the END!!!
@@ -37,5 +40,5 @@ This will run it every monday every week until the END!!!
 #|   |    |   |   |   commands
 #|   |    |   |   |   |
 #### refresh bind anti-ad server list
- 15   7   *  *   1   /3 /etc/bind/bindupdate.sh>> /dev/null 2>&1
+ 15   7   *  *   1   /3 /etc/dnsmasq.sh.sh>> /dev/null 2>&1
  ```
