@@ -3,10 +3,10 @@ echo -e "\E[33;40m[*] Checking if you're running an Edgemax device.\e[0m"
 if [ -f /config/config.boot ]; then
 	echo -e "\E[32;40m Edge router detected \e[0m"
 	echo -e "\E[33;40m[*] Checking if dnsmasq is installed.\e[0m"
-    TEST=` find /etc/dnsmasq.d `
-if [ "$TEST" != "/etc/dnsmasq.d" ]; then
-	echo -e "Installed/found"
-        sleep 1
+	TEST=` find /etc/dnsmasq.d `
+	if [ "$TEST" != "/etc/dnsmasq.d" ]; then
+		echo -e "Installed/found"
+	        sleep 1
 		echo -e "\E[32;40m[*] Updating your ad-block list [*]\e[0m"
 		sleep 2
 		curl -s "http://pgl.yoyo.org/adservers/serverlist.php?hostformat=dnsmasq&showintro0&mimetype=plaintext" > /etc/ads.dnsmasq.conf
@@ -14,14 +14,14 @@ if [ "$TEST" != "/etc/dnsmasq.d" ]; then
 		/etc/init.d/dnsmasq restart
 		echo -e "\E[32;40m Done! \e[0m"
 		exit 1
-		 else
-	echo -e "\e[0;31m dnsmasq is not installed or missing \e[0m"
-	exit 1
-	fi
 	else
-echo -e "\E[33;40m Edgemax not found \e[0m"
-echo -e "\E[33;40m[*] Checking if dnsmasq is installed.\e[0m"
- if [ -f /etc/dnsmasq.conf ]; then
+		echo -e "\e[0;31m dnsmasq is not installed or missing \e[0m"
+		exit 1
+		fi
+else
+	echo -e "\E[33;40m Edgemax not found \e[0m"
+	echo -e "\E[33;40m[*] Checking if dnsmasq is installed.\e[0m"
+	if [ -f /etc/dnsmasq.conf ]; then
 	echo -e "\E[32;40m dnsmasq is installed \e[0m"
 	sleep 1
 	echo -e "\E[33;40m[*] Checking the dnsmasq config [*]\e[0m"
