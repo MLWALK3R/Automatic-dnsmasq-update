@@ -34,8 +34,8 @@ else
 	read -p "Add to Cron? . (y/n) " REPLY
 	if [ "$REPLY" = "y" ]; then
 		echo -e "\E[33;40m[*] Adding Cron task [*]\e[0m"
-		touch /etc/cron.d/dnsmasq.cron
 		curl -s "https://raw.github.com/MLWALK3R/Automatic-dnsmasq-update/master/dnsmasq.cron" > /etc/cron.d/dnsmasq.cron
+		 echo -e "Done"
 		exit 1
 	else
 		echo -e "\E[32;40m Ok have it your way \e[0m"
