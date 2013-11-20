@@ -9,7 +9,7 @@ if [ "$TEST" != "/etc/dnsmasq.d" ]; then
         sleep 1
 		echo -e "\E[32;40m[*] Updating your ad-block list [*]\e[0m"
 		sleep 2
-		curl -o -s /etc/dnsmasq.d/ads.dnsmasq.conf  "http://pgl.yoyo.org/adservers/serverlist.php?hostformat=dnsmasq&showintro0&mimetype=plaintext"
+		curl -s "http://pgl.yoyo.org/adservers/serverlist.php?hostformat=dnsmasq&showintro0&mimetype=plaintext" > /etc/ads.dnsmasq.conf
 		echo -e "reloading dnsmasq"
 		/etc/init.d/dnsmasq restart
 		echo -e "\E[32;40m Done! \e[0m"
@@ -32,14 +32,14 @@ echo -e "\E[33;40m[*] Checking if dnsmasq is installed.\e[0m"
 		sleep 1
 		echo -e "\E[32;40m[*] Updating your ad-block list [*]\e[0m"
 		sleep 2
-		curl -o -s /etc/ads.dnsmasq.conf  "http://pgl.yoyo.org/adservers/serverlist.php?hostformat=dnsmasq&showintro0&mimetype=plaintext"
+		curl -s "http://pgl.yoyo.org/adservers/serverlist.php?hostformat=dnsmasq&showintro0&mimetype=plaintext" > /etc/ads.dnsmasq.conf
 		echo -e "reloading dnsmasq"
 		/etc/init.d/dnsmasq restart
 		echo -e "\E[32;40m Done! \e[0m"
 	else 
 		echo -e "\E[32;40m[*] Updating your ad-block list [*]\e[0m"
 		sleep 2
-		curl -o -s /etc/ads.dnsmasq.conf  "http://pgl.yoyo.org/adservers/serverlist.php?hostformat=dnsmasq&showintro0&mimetype=plaintext"
+		curl -s "http://pgl.yoyo.org/adservers/serverlist.php?hostformat=dnsmasq&showintro0&mimetype=plaintext" > /etc/ads.dnsmasq.conf
 		echo -e "reloading dnsmasq"
 		/etc/init.d/dnsmasq restart
 		echo -e "\E[32;40m updated ad list \e[0m"
@@ -57,7 +57,7 @@ else
 	if [ $REPLY = "y" ]; then
 		echo -e "\E[33;40m[*] Adding Cron task [*]\e[0m"
 		touch /etc/cron.d/dnsmasq.cron
-		curl -o -s /etc/cron.d/dnsmasq.cron "https://raw.github.com/MLWALK3R/Automatic-dnsmasq-update/master/dnsmasq.cron"
+		curl -s "https://raw.github.com/MLWALK3R/Automatic-dnsmasq-update/master/dnsmasq.cron" > /etc/cron.d/dnsmasq.cron
 		exit 1
 	else
 		echo -e "\E[32;40m Ok have it your way \e[0m"
