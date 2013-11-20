@@ -4,7 +4,8 @@
 	echo -e "\E[32;40m dnsmasq is installed \e[0m"
 	sleep 1
 	echo -e "\E[33;40m[*] Checking the dnsmasq.d folder [*]\e[0m"
-    if [ -f /etc/dnsmasq.d/ads.dnsmasq.conf  ];  then 
+    if [ -f /etc/dnsmasq.d/ads.dnsmasq.conf  ];  then
+        sleep 1 
 		echo -e "\E[32;40m[*] Updating your ad-block list [*]\e[0m"
 		sleep 2
 		curl -s "http://pgl.yoyo.org/adservers/serverlist.php?hostformat=dnsmasq&showintro0&mimetype=plaintext" > /etc/dnsmasq.d/ads.dnsmasq.conf
