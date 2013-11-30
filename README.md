@@ -14,7 +14,7 @@ Make sure you are running as root & have curl installed. This script will instal
 
 **Prefered method** (Without downloading)
 ```bash
-curl -s https://raw.github.com/MLWALK3R/Automatic-dnsmasq-update/master/dnsmasq.sh  | bash
+bash <(curl -s  https://raw.github.com/MLWALK3R/Automatic-dnsmasq-update/master/dnsmasq.sh )
 ```
 
 Download * You will need to set permissions to run it. 
