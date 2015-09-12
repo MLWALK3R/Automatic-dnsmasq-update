@@ -5,5 +5,5 @@
 #|   |    |   |   day of the week (0-6 with 0=Sun or Sun-Sat)
 #|   |    |   |   |   commands
 #|   |    |   |   |   |
-#### refresh bind anti-ad server list
+#### update dnsmasq ad server list
  15   7   *  *   1   /3 curl -s https://raw.github.com/MLWALK3R/Automatic-dnsmasq-update/master/dnsmasq.sh  | bash>> /dev/null 2>&1
